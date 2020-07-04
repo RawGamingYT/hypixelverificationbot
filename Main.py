@@ -88,4 +88,11 @@ async def link(ctx, username=None):
         await ctx.send(f"{message.author.mention}")
         await ctx.send(embed=linkFail)
 
+@client.command(pass_context=True)
+async def prefix(ctx, prefix=None):
+    if prefix == None:
+        await ctx.send("Please enter an prefix for the command, Default: /")
+    else:
+        client.command_prefix = prefix
+
 client.run(TOKEN)
