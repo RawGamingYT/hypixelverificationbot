@@ -43,7 +43,13 @@ async def link(ctx, username=None):
     discord_tag = None
     # TODO: use UUID instead
     MojangAPI = requests.get(f"https://api.mojang.com/users/profiles/minecraft/{username}")
+    with open("links.json") as f:
+        linkdata = json.load(f)
     
+    if username in linkdata:
+        await ctx.send(f"{message.author.mention}")
+        await ctx.send("This minecraft account is already linked with an discord account.")
+
     try:
         # TODO: #2 use UUID instead
         player = hypixel.Player(username)
