@@ -1,5 +1,5 @@
-.git
-.vscode
-apikey.txt
-BotToken.txt
-links.json
+/.git
+/.vscode
+/BotToken.txt
+/apikey.txt
+/links.json
