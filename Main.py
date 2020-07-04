@@ -45,7 +45,7 @@ async def link(ctx, username=None):
     MojangAPI = requests.get(f"https://api.mojang.com/users/profiles/minecraft/{username}")
     
     try:
-        # TODO: use UUID instead
+        # TODO: #2 use UUID instead
         player = hypixel.Player(username)
         player_info = player.getPlayerInfo()
     except:
@@ -61,7 +61,7 @@ async def link(ctx, username=None):
         linkSuccess = discord.Embed(color=0x00FF00)
         linkSuccess.set_author(name="Success!")
         linkSuccess.add_field(name=":white_check_mark: Successfuly Linked Account", value="Your roles should update now")
-        # TODO: Add an system to automaticly add roles
+        # TODO: #1 Add an system to automaticly add roles
         if get(ctx.guild.roles, name="Verified"):
             pass
         else:
